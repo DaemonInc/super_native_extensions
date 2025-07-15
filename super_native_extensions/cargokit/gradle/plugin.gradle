@@ -107,7 +107,6 @@ class CargoKitPlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
         def plugin = findFlutterPlugin(project.rootProject);
-        print("Found Flutter plugin: ${plugin?.class?.name}\n")
 
         project.extensions.create("cargokit", CargoKitExtension)
 
