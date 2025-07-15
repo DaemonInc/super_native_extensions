@@ -92,9 +92,7 @@ class CargoKitPlugin implements Plugin<Project> {
    private Plugin _findFlutterPlugin(Map projects) {
         for (project in projects) {
             for (plugin in project.value.getPlugins()) {
-                print("\nChecking plugin: ${plugin.class.name} in project: ${project.value.name}")
                 if (plugin.class.name == "FlutterPlugin") {
-                    print("Found Flutter plugin in project: ${project.value.name}\n")
                     return plugin;
                 }
             }
@@ -108,7 +106,6 @@ class CargoKitPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
-        print("Applying CargoKit plugin to project: ${project.name}\n")
         def plugin = findFlutterPlugin(project.rootProject);
         print("Found Flutter plugin: ${plugin?.class?.name}\n")
 
